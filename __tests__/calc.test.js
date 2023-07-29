@@ -13,4 +13,10 @@ test('Calculates age in Venus years', () => {
   const venusAge = ageCalc.calculateVenusAge();
   expect(venusAge).toBeCloseTo(48.75, 1);
   });
+
+  test('Calculates age in Mars years', () => {
+    const ageCalc = new Calc(30);
+    const marsAge = ageCalc.calculateMarsAge();
+    expect(marsAge).toBeCloseTo(15.94, 4);
+  });
 });
