@@ -33,7 +33,7 @@ test('Calculates age in Venus years', () => {
   });
 
   test('Determines how many years have passed on each planet since a past birthday', () => {
-    const ageCalc = new Calc(56);
+  const ageCalc = new Calc(56);
   const yearsPassedOnPlanets = ageCalc.yearsPassedOnPlanets(43);
   const mercuryYears = parseFloat(yearsPassedOnPlanets.mercury.toFixed(0));
   const venusYears = parseFloat(yearsPassedOnPlanets.venus.toFixed(0));
@@ -44,5 +44,17 @@ test('Calculates age in Venus years', () => {
     expect(venusYears).toBeCloseTo(20.96, 0);
     expect(marsYears).toBeCloseTo(6.91, 0);
     expect(jupiterYears).toBeCloseTo(1.09, 0);
+  });
+
+  test("Determines how many years have yet to pass until a future birthday", () => {
+    const ageCalc = new Calc(56);
+    const futureAge = 61;
+    const yearsToFutureBirthday = ageCalc.yearsToFutureBirthday(futureAge);
+
+    expect(yearsToFutureBirthday.earth).toBe(5);
+    expect(yearsToFutureBirthday.mercury).toBeCloseTo(20.83, 1);
+    expect(yearsToFutureBirthday.venus).toBeCloseTo(8.06, 1);
+    expect(yearsToFutureBirthday.mars).toBeCloseTo(2.65, 1);
+    expect(yearsToFutureBirthday.jupiter).toBeCloseTo(0.42, 1);
   });
 });
