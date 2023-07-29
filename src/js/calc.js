@@ -30,4 +30,8 @@ export class Calc {
   calculateJupiterAge() {
     return this.calculatePlanetAge('jupiter');
   }
+
+  yearsPassedOnEarth(ageAtPastBirthday) {
+    return this.earthAge - ageAtPastBirthday;
+  }
 }
