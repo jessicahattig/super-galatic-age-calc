@@ -26,4 +26,8 @@ export class Calc {
   calculateMarsAge() {
     return this.calculatePlanetAge('mars');
   }
+
+  calculateJupiterAge() {
+    return this.calculatePlanetAge('jupiter');
+  }
 }
