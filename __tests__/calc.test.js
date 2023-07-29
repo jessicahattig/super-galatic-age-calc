@@ -2,9 +2,9 @@ import { Calc } from '../src/js/calc.js';
 
 describe("Super Galactic Age Calculator Tests", () => {
 
-test('Calculates age in Mercery years', () => {
-  const ageCalc = new GalaticAgeCalc(30);
-  const mercuryAge = ageCalc.GalaticAgeCalc();
-  expect(mercuryAge).toBeClostTo(125);
+test('Calculates age in Mercury years', () => {
+  const ageCalc = new Calc(30);
+  const mercuryAge = ageCalc.calculateMercuryAge();
+  expect(mercuryAge).toBeCloseTo(125, 2);
   });
 });
