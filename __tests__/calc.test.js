@@ -25,4 +25,10 @@ test('Calculates age in Venus years', () => {
     const jupiterAge = ageCalc.calculateJupiterAge();
     expect(jupiterAge).toBeCloseTo(2.53, 1);
   });
+
+  test('Calculates years passed on Earth since a past birthday', () => {
+    const ageCalc = new Calc(56);
+    const yearsPassedOnEarth = ageCalc.yearsPassedOnEarth(43);
+    expect(yearsPassedOnEarth).toBe(13);
+  });
 });
