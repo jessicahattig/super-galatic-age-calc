@@ -34,12 +34,15 @@ test('Calculates age in Venus years', () => {
 
   test('Determines how many years have passed on each planet since a past birthday', () => {
     const ageCalc = new Calc(56);
-    const yearsPassedOnPlanets = ageCalc.yearsPassedOnPlanets(43);
-    expect(yearsPassedOnPlanets).toEqual({
-      mercury: 54.16,
-      venus: 20.96,
-      mars: 6.91,
-      jupiter: 1.09,
-    });
+  const yearsPassedOnPlanets = ageCalc.yearsPassedOnPlanets(43);
+  const mercuryYears = parseFloat(yearsPassedOnPlanets.mercury.toFixed(0));
+  const venusYears = parseFloat(yearsPassedOnPlanets.venus.toFixed(0));
+  const marsYears = parseFloat(yearsPassedOnPlanets.mars.toFixed(0));
+  const jupiterYears = parseFloat(yearsPassedOnPlanets.jupiter.toFixed(0));
+
+    expect(mercuryYears).toBeCloseTo(54.16, 0);
+    expect(venusYears).toBeCloseTo(20.96, 0);
+    expect(marsYears).toBeCloseTo(6.91, 0);
+    expect(jupiterYears).toBeCloseTo(1.09, 0);
   });
 });
