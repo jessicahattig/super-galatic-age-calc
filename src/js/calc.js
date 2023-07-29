@@ -18,4 +18,8 @@ export class Calc {
   calculateMercuryAge() {
     return this.calculatePlanetAge('mercury');
   }
+
+  calculateVenusAge() {
+    return this.calculatePlanetAge('venus');
+  }
 }

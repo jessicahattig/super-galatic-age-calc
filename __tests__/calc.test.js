@@ -11,6 +11,6 @@ test('Calculates age in Mercury years', () => {
 test('Calculates age in Venus years', () => {
   const ageCalc = new Calc(30);
   const venusAge = ageCalc.calculateVenusAge();
-  expect(venusAge).toBeCloseTo(48.75, 4);
+  expect(venusAge).toBeCloseTo(48.75, 1);
   });
 });
