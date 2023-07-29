@@ -34,4 +34,19 @@ export class Calc {
   yearsPassedOnEarth(ageAtPastBirthday) {
     return this.earthAge - ageAtPastBirthday;
   }
+
+  yearsPassedOnPlanets(ageAtPastBirthday) {
+    const earthYearsPassed = this.yearsPassedOnEarth(ageAtPastBirthday);
+
+    const yearsPassedOnPlanets = {};
+    for (const planet in this.planetYearRatios) {
+      const planetRatio = this.planetYearRatios[planet];
+      const planetAgeAtPastBirthday = (this.earthAge - earthYearsPassed) / planetRatio;
+      const planetAgeAtCurrentAge = this.earthAge / planetRatio;
+      const yearsPassedOnPlanet = planetAgeAtCurrentAge - planetAgeAtPastBirthday;
+      yearsPassedOnPlanets[planet] = parseFloat(yearsPassedOnPlanet.toFixed(2));
+    }
+
+    return yearsPassedOnPlanets;
+  }
 }
