@@ -53,4 +53,17 @@ test('Calculates age in Venus years', () => {
     expect(yearsToFutureBirthday.mars).toBeCloseTo(2.65, 0);
     expect(yearsToFutureBirthday.jupiter).toBeCloseTo(0.42, 0);
   });
+
+  test("Test for an age of 0 on all planets", () => {
+    const ageCalc = new Calc(0);
+    const mercuryAge = ageCalc.calculateMercuryAge();
+    const venusAge = ageCalc.calculateVenusAge();
+    const marsAge = ageCalc.calculateMarsAge();
+    const jupiterAge = ageCalc.calculateJupiterAge();
+  
+    expect(mercuryAge).toBe(0);
+    expect(venusAge).toBe(0);
+    expect(marsAge).toBe(0);
+    expect(jupiterAge).toBe(0);
+  });
 });
