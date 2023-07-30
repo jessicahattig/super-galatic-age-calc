@@ -1,17 +1,17 @@
-import { Calc } from '../src/js/calc.js'; 
+import { Calc } from '../src/js/calc.js';
 
 describe("Super Galactic Age Calculator Tests", () => {
 
-test('Calculates age in Mercury years', () => {
-  const ageCalc = new Calc(30);
-  const mercuryAge = ageCalc.calculateMercuryAge();
-  expect(mercuryAge).toBeCloseTo(124.60, 1);
+  test('Calculates age in Mercury years', () => {
+    const ageCalc = new Calc(30);
+    const mercuryAge = ageCalc.calculateMercuryAge();
+    expect(mercuryAge).toBeCloseTo(124.60, 1);
   });
 
-test('Calculates age in Venus years', () => {
-  const ageCalc = new Calc(30);
-  const venusAge = ageCalc.calculateVenusAge();
-  expect(venusAge).toBeCloseTo(48.75, 1);
+  test('Calculates age in Venus years', () => {
+    const ageCalc = new Calc(30);
+    const venusAge = ageCalc.calculateVenusAge();
+    expect(venusAge).toBeCloseTo(48.75, 1);
   });
 
   test('Calculates age in Mars years', () => {
@@ -60,7 +60,7 @@ test('Calculates age in Venus years', () => {
     const venusAge = ageCalc.calculateVenusAge();
     const marsAge = ageCalc.calculateMarsAge();
     const jupiterAge = ageCalc.calculateJupiterAge();
-  
+
     expect(mercuryAge).toBe(0);
     expect(venusAge).toBe(0);
     expect(marsAge).toBe(0);
@@ -72,9 +72,9 @@ test('Calculates age in Venus years', () => {
     const futureAge = 35;
     const ageCalc = new Calc(earthAge);
     const yearsToFutureBirthday = ageCalc.yearsToFutureBirthday(futureAge);
-  
+
     expect(yearsToFutureBirthday.earth).toBe(futureAge - earthAge);
-  
+
     expect(yearsToFutureBirthday.mercury).toBeGreaterThan(0);
     expect(yearsToFutureBirthday.venus).toBeGreaterThan(0);
     expect(yearsToFutureBirthday.mars).toBeGreaterThan(0);

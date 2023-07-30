@@ -53,14 +53,14 @@ export class Calc {
   yearsToFutureBirthday(futureAge) {
     const yearsLeftOnEarth = futureAge - this.earthAge;
     const yearsLeftOnPlanets = {};
-  
+
     for (const planet in this.planetYearRatios) {
       const planetRatio = this.planetYearRatios[planet];
       const futureAgeOnPlanet = futureAge / planetRatio;
       const yearsToFutureBirthdayOnPlanet = futureAgeOnPlanet - (this.earthAge / planetRatio);
       yearsLeftOnPlanets[planet] = parseFloat(yearsToFutureBirthdayOnPlanet.toFixed(2));
     }
-  
+
     return {
       earth: yearsLeftOnEarth,
       ...yearsLeftOnPlanets,
