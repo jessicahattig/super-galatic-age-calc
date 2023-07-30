@@ -66,4 +66,18 @@ test('Calculates age in Venus years', () => {
     expect(marsAge).toBe(0);
     expect(jupiterAge).toBe(0);
   });
+
+  test("Test for a future birthday on all planets", () => {
+    const earthAge = 30;
+    const futureAge = 35;
+    const ageCalc = new Calc(earthAge);
+    const yearsToFutureBirthday = ageCalc.yearsToFutureBirthday(futureAge);
+  
+    expect(yearsToFutureBirthday.earth).toBe(futureAge - earthAge);
+  
+    expect(yearsToFutureBirthday.mercury).toBeGreaterThan(0);
+    expect(yearsToFutureBirthday.venus).toBeGreaterThan(0);
+    expect(yearsToFutureBirthday.mars).toBeGreaterThan(0);
+    expect(yearsToFutureBirthday.jupiter).toBeGreaterThan(0);
+  });
 });
