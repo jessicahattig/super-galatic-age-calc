@@ -27,7 +27,8 @@ _Super Galactic Age Calculator: Calculate your age on different planets and disc
 * _Clone this repository to your desktop._
 * _Navigate to the root directory of project "super-galatic-age-calc"._
 * _Run the following terminal command to install the project's dependencies: 'npm install'_
-* _After the installation is complete, run the following command to execute the Jest tests: 'npm run start'_
+* _After the installation is complete, start the application using the following command: `npm run start`_
+* _Once the application is up and running, you can run the following command to execute the Jest tests: `npm run test`_
 
 
 ## Known Bugs
